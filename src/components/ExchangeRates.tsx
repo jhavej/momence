@@ -2,8 +2,8 @@ import { useQuery } from "react-query";
 import { parseExchangeRates } from "../lib/utils";
 import { ExchangeRatesTable } from "./ExchangeRatesTable";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+const baseUrl = process.env.REACT_APP_VERCEL_URL
+  ? `https://${process.env.REACT_APP_VERCEL_URL}`
   : "http://localhost:3001";
 
 const apiEndpoint = "/api/exchangeRates";
