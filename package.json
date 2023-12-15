@@ -9,11 +9,22 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^3.0.4"
   },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "@vercel/style-guide": "^5.1.0",
+    "eslint": "^8.55.0",
+    "typescript": "^5.3.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ts": "tsc",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -32,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "packageManager": "pnpm@8.8.0",
+  "engines": {
+    "node": "^18.17",
+    "pnpm": "^8.8.0"
   }
 }
