@@ -42,7 +42,7 @@ const fetchExchangeRates = async () => {
 };
 
 app.get(
-  "/exchangeRates",
+  "/api/exchangeRates",
   asyncHandler<string>(async (_, res) => {
     const response = await fetchExchangeRates();
     return res.send(response);
