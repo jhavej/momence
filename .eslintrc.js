@@ -4,6 +4,9 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 module.exports = {
   root: true,
+  env: {
+    node: true,
+  },
   extends: [
     "@vercel/style-guide/eslint/browser",
     "@vercel/style-guide/eslint/typescript",
@@ -25,5 +28,10 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js"],
   rules: {
     "import/no-default-export": "off",
+    "unicorn/filename-case": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-sort-props": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
   },
 };
