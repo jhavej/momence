@@ -2,20 +2,17 @@ import { useQuery } from "react-query";
 import { parseExchangeRates } from "../lib/utils";
 import { ExchangeRatesTable } from "./ExchangeRatesTable";
 
-const corsProxy = "https://proxy.cors.sh";
+const baseUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3001";
 
-const exchangeRateUrl =
-  "https://www.cnb.cz/en/financial-markets/foreign-exchange-market/central-bank-exchange-rate-fixing/central-bank-exchange-rate-fixing/daily.txt";
+const apiEndpoint = "/api/exchangeRates";
 
 export const Rates = () => {
   const { isLoading, isError, data } = useQuery({
     queryKey: ["exchangeRates"],
     queryFn: async () => {
-      const response = await fetch(`${corsProxy}/${exchangeRateUrl}`, {
-        headers: {
-          "x-cors-api-key": process.env.REACT_APP_PROXY_CORS_KEY!,
-        },
-      });
+      const response = await fetch(`${baseUrl}${apiEndpoint}`);
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
