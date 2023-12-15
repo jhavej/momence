@@ -2,10 +2,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import express, {
   json,
+  NextFunction,
+  Request,
+  Response,
   static as static_,
-  type NextFunction,
-  type Request,
-  type Response,
 } from "express";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -49,6 +49,4 @@ app.get(
   })
 );
 
-app.listen(PORT, () => {
-  console.log("Start listening");
-});
+app.listen(PORT);
