@@ -27,7 +27,10 @@ module.exports = {
   },
   ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js"],
   rules: {
+    "eslint-comments/require-description": "off",
     "import/no-default-export": "off",
+    "import/order": "off",
+    "no-console": "warn",
     "unicorn/filename-case": "off",
     "react/function-component-definition": "off",
     "react/jsx-sort-props": "off",
