@@ -18,7 +18,8 @@
     "@vercel/style-guide": "^5.1.0",
     "eslint": "^8.55.0",
     "jest": "^29.7.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "husky": "^8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,7 +28,8 @@
     "eject": "react-scripts eject",
     "ts": "tsc",
     "lint": "eslint .",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
