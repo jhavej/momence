@@ -1,21 +1,13 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import express, {
   json,
   NextFunction,
   Request,
   Response,
-  static as static_,
 } from "express";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
 app.use(json());
-
-app.use(static_(path.join(__dirname, "build")));
 
 type AsyncHandlerFunction<T> = (
   req: Request,
