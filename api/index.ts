@@ -44,6 +44,14 @@ app.get(
   "/api/exchangeRates",
   asyncHandler<string>(async (_, res) => {
     const response = await fetchExchangeRates();
+
+    if (process.env.NODE_ENV === "development") {
+      res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+        "Access-Control-Allow-Methods": "GET",
+      });
+    }
+
     return res.send(response);
   })
 );

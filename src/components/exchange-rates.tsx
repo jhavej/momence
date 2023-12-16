@@ -4,17 +4,11 @@ import { FlexColumn } from "../ui/layout";
 import { ExchangeRateConversionForm } from "./exchange-rate-conversion-form";
 import { ExchangeRatesTable } from "./exchanger-rates-table";
 
-const baseUrl = process.env.REACT_APP_VERCEL_URL
-  ? `https://${process.env.REACT_APP_VERCEL_URL}`
-  : "http://localhost:3001";
-
-const apiEndpoint = "/api/exchangeRates";
-
 export const ExchangeRates = () => {
   const { isLoading, isError, data } = useQuery({
     queryKey: ["exchangeRates"],
     queryFn: async () => {
-      const response = await fetch(`${baseUrl}${apiEndpoint}`);
+      const response = await fetch("/api/exchangeRates");
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
