@@ -8,7 +8,11 @@ export const ExchangeRates = () => {
   const { isLoading, isError, data } = useQuery({
     queryKey: ["exchangeRates"],
     queryFn: async () => {
-      const response = await fetch("/api/exchangeRates");
+      const response = await fetch(
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3001/api/exchangeRates"
+          : "/api/exchangeRates"
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
