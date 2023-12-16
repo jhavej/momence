@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
 import { parseExchangeRates } from "../lib/utils";
 import { FlexColumn } from "../ui/layout";
-import { ExchangeRateConversionForm } from "./ExchangeRateConversionForm";
-import { ExchangeRatesTable } from "./ExchangeRatesTable";
+import { ExchangeRateConversionForm } from "./exchange-rate-conversion-form";
+import { ExchangeRatesTable } from "./exchanger-rates-table";
 
 const baseUrl = process.env.REACT_APP_VERCEL_URL
   ? `https://${process.env.REACT_APP_VERCEL_URL}`
@@ -10,7 +10,7 @@ const baseUrl = process.env.REACT_APP_VERCEL_URL
 
 const apiEndpoint = "/api/exchangeRates";
 
-export const Rates = () => {
+export const ExchangeRates = () => {
   const { isLoading, isError, data } = useQuery({
     queryKey: ["exchangeRates"],
     queryFn: async () => {
