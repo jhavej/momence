@@ -8,7 +8,7 @@ export const exchangeRatesSchema = z.object({
       currency: z.string(),
       amount: z.number(),
       code: z.string().length(3),
-      value: z.number(),
+      rate: z.number(),
     })
   ),
 });

@@ -28,13 +28,13 @@ export const ExchangeRatesTable = ({ exchangeRates }: WithExchangeRates) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {rates.map(({ country, amount, code, currency, value }) => (
+          {rates.map(({ country, amount, code, currency, rate }) => (
             <TableRow key={code}>
               <TableCell>{country}</TableCell>
               <TableCell>{currency}</TableCell>
               <TableCell>{amount}</TableCell>
               <TableCell>{code}</TableCell>
-              <TableCell>{value}</TableCell>
+              <TableCell>{rate}</TableCell>
             </TableRow>
           ))}
         </TableBody>

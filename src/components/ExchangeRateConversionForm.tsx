@@ -62,7 +62,7 @@ export const ExchangeRateConversionForm = ({
 
   const handleConversion = (a: string, currency: typeof selectedCurrency) => {
     const parsedAmount = parseFloat(a);
-    const conversionRate = currency.value / currency.amount;
+    const conversionRate = currency.rate / currency.amount;
     setResult((parsedAmount / conversionRate).toFixed(2));
   };
 

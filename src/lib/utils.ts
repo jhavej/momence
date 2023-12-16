@@ -15,13 +15,13 @@ export const parseExchangeRates = (data: string) => {
       : null;
 
     const rates = exchangeRateLines.map((line) => {
-      const [country, currency, amount, code, value] = line.split("|");
+      const [country, currency, amount, code, rate] = line.split("|");
       return {
         country: country.trim(),
         currency: currency.trim(),
         amount: parseInt(amount),
         code: code.trim(),
-        value: parseFloat(value),
+        rate: parseFloat(rate),
       };
     });
 
