@@ -1,5 +1,5 @@
-import type * as z from "zod";
-import { type exchangeRatesSchema } from "@/lib/validations/exchange-rates";
+import { WithExchangeRates } from "@/types";
+import { StyledH2 } from "../ui/heading";
 import {
   Table,
   TableBody,
@@ -10,38 +10,35 @@ import {
   TableRow,
 } from "../ui/table";
 
-interface ExchangeRatesTableProps {
-  exchangeRates: z.infer<typeof exchangeRatesSchema>;
-}
-
-export const ExchangeRatesTable = ({
-  exchangeRates,
-}: ExchangeRatesTableProps) => {
+export const ExchangeRatesTable = ({ exchangeRates }: WithExchangeRates) => {
   const { date, rates } = exchangeRates;
 
   return (
-    <Table>
-      <TableCaption>{date.toDateString()}</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead>Country</TableHead>
-          <TableHead>Currency</TableHead>
-          <TableHead>Amount</TableHead>
-          <TableHead>Code</TableHead>
-          <TableHead>Rate</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {rates.map(({ country, amount, code, currency, value }) => (
-          <TableRow key={code}>
-            <TableCell>{country}</TableCell>
-            <TableCell>{currency}</TableCell>
-            <TableCell>{amount}</TableCell>
-            <TableCell>{code}</TableCell>
-            <TableCell>{value}</TableCell>
+    <div>
+      <StyledH2>Conversion Rates</StyledH2>
+      <Table>
+        <TableCaption>{date.toDateString()}</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Country</TableHead>
+            <TableHead>Currency</TableHead>
+            <TableHead>Amount</TableHead>
+            <TableHead>Code</TableHead>
+            <TableHead>Rate</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {rates.map(({ country, amount, code, currency, value }) => (
+            <TableRow key={code}>
+              <TableCell>{country}</TableCell>
+              <TableCell>{currency}</TableCell>
+              <TableCell>{amount}</TableCell>
+              <TableCell>{code}</TableCell>
+              <TableCell>{value}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 };

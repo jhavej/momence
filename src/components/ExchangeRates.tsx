@@ -1,5 +1,7 @@
 import { useQuery } from "react-query";
 import { parseExchangeRates } from "../lib/utils";
+import { FlexColumn } from "../ui/layout";
+import { ExchangeRateConversionForm } from "./ExchangeRateConversionForm";
 import { ExchangeRatesTable } from "./ExchangeRatesTable";
 
 const baseUrl = process.env.REACT_APP_VERCEL_URL
@@ -34,5 +36,10 @@ export const Rates = () => {
     return <span>No Data...</span>;
   }
 
-  return <ExchangeRatesTable exchangeRates={data} />;
+  return (
+    <FlexColumn>
+      <ExchangeRateConversionForm exchangeRates={data} />
+      <ExchangeRatesTable exchangeRates={data} />
+    </FlexColumn>
+  );
 };
