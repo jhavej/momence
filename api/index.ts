@@ -1,6 +1,5 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { config as dotenvConfig } from "dotenv";
 import express, {
   json,
   NextFunction,
@@ -8,8 +7,6 @@ import express, {
   Response,
   static as static_,
 } from "express";
-
-dotenvConfig({ path: "../.env" });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -47,14 +44,6 @@ app.get(
   "/api/exchangeRates",
   asyncHandler<string>(async (_, res) => {
     const response = await fetchExchangeRates();
-
-    if (process.env.NODE_ENV === "development") {
-      res.set({
-        "Access-Control-Allow-Origin": "http://localhost:3000",
-        "Access-Control-Allow-Methods": "GET",
-      });
-    }
-
     return res.send(response);
   })
 );
