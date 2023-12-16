@@ -60,8 +60,11 @@ export const ExchangeRateConversionForm = ({
     }
   };
 
-  const handleConversion = (a: string, currency: typeof selectedCurrency) => {
-    const parsedAmount = parseFloat(a);
+  const handleConversion = (
+    amnt: string,
+    currency: typeof selectedCurrency
+  ) => {
+    const parsedAmount = parseFloat(amnt);
     const conversionRate = currency.rate / currency.amount;
     setResult((parsedAmount / conversionRate).toFixed(2));
   };

@@ -16,7 +16,7 @@ export const ExchangeRates = () => {
       );
 
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error("API response not ok");
       }
       const rawExchangeRates = await response.text();
       return parseExchangeRates(rawExchangeRates);
