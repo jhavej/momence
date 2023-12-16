@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { parseExchangeRates } from "../lib/utils";
 import { FlexColumn } from "../ui/layout";
+import { StyledSpinner } from "../ui/spinner";
 import { ExchangeRateConversionForm } from "./exchange-rate-conversion-form";
 import { ExchangeRatesTable } from "./exchanger-rates-table";
 
@@ -23,7 +24,7 @@ export const ExchangeRates = () => {
   });
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <StyledSpinner />;
   }
 
   if (isError) {
