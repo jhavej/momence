@@ -3,7 +3,6 @@
   "display": "Express.js",
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
     "noEmit": false,
     "outDir": "dist"
   },

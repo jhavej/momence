@@ -1,6 +1,5 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { config as dotenvConfig } from "dotenv";
 import express, {
   json,
   NextFunction,
@@ -8,8 +7,6 @@ import express, {
   Response,
   static as static_,
 } from "express";
-
-dotenvConfig({ path: "../.env" });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
