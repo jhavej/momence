@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WithExchangeRates } from "@/types";
+import { WithExchangeRates } from "../types";
 import { StyledField } from "../ui/form/field";
 import { StyledInput } from "../ui/form/input";
 import { StyledLabel } from "../ui/form/label";

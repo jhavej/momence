@@ -10,10 +10,6 @@
     "^(react/(.*)$)|^(react$)",
     "<THIRD_PARTY_MODULES>",
     "^types$",
-    "^@/types/(.*)$",
-    "^@/lib/(.*)$",
-    "^@/components/(.*)$",
-    "^@/styles/(.*)$",
     "^[./]"
   ],
   "plugins": ["@ianvs/prettier-plugin-sort-imports"]

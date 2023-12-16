@@ -1,4 +1,4 @@
-import { WithExchangeRates } from "@/types";
+import { WithExchangeRates } from "../types";
 import { StyledH2 } from "../ui/heading";
 import {
   Table,
