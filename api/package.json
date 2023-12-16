@@ -4,8 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && dotenv -e ../.env node dist/index.js",
-    "vercel-build": "tsc && find dist -name '*.js' -exec sh -c 'mv \"$1\" \"${1%.js}.cjs\"' _ {} \\;"
+    "start": "tsc --noEmit false --outDir dist && dotenv -e ../.env node dist/api/index.js"
   },
   "dependencies": {
     "express": "^4.18.2"
